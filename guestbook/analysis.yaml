@@ -61,7 +61,7 @@ spec:
   metrics:
   - name: fail
     interval: 10s
-    failureLimit: 24
+    failureLimit: 1
     provider:
       job:
         spec:
