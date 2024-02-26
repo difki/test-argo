@@ -36,9 +36,8 @@ metadata:
 spec:
   metrics:
   - name: random-fail
-    count: 2
     interval: 10s
-    failureLimit: 24
+    failureLimit: 6
     provider:
       job:
         spec:
