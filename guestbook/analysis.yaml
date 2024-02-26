@@ -51,3 +51,28 @@ spec:
                 args: [FLIP=$(($(($RANDOM%10))%2)) && exit $FLIP]
               restartPolicy: Never
           backoffLimit: 0
+---
+---
+# This AnalysisTemplate will run a Kubernetes Job every 5 seconds that succeeds.
+kind: AnalysisTemplate
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: fail
+spec:
+  metrics:
+  - name: fail
+    count: 1
+    interval: 10s
+    failureLimit: 24
+    provider:
+      job:
+        spec:
+          template:
+            spec:
+              containers:
+              - name: sleep
+                image: alpine:3.8
+                command: [sh, -c]
+                args: [exit 1]
+              restartPolicy: Never
+          backoffLimit: 0
