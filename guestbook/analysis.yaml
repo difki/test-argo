@@ -71,6 +71,6 @@ spec:
               - name: sleep
                 image: alpine:3.8
                 command: [sh, -c]
-                args: [sleep 180 && exit 1]
+                args: [sleep 180]
               restartPolicy: Never
           backoffLimit: 0
