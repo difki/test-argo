@@ -61,7 +61,6 @@ metadata:
 spec:
   metrics:
   - name: fail
-    count: 1
     interval: 10s
     failureLimit: 24
     provider:
