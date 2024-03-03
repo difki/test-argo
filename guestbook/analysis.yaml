@@ -12,7 +12,7 @@ spec:
   - name: pass
     count: 1
     interval: 5s
-    failureLimit: 1
+    failureLimit: "1"
     provider:
       job:
         spec:
